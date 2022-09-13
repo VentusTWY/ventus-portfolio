@@ -1,5 +1,4 @@
-import './App.css'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { ChakraProvider } from '@chakra-ui/react'
 import React from 'react'
 import { Layout } from './components/Layout/Layout'
