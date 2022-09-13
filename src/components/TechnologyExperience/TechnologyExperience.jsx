@@ -14,7 +14,7 @@ export const TechnologyExperience = () => {
         width={'100vw'}
       >
         <Text color={'7F8DAA'} fontSize={'50px'} fontWeight={500}>
-          Coming Soon :D
+          Work In Progress.<br></br> Something interesting is coming soon 😃
         </Text>
       </Flex>
     </>
