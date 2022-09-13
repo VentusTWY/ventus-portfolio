@@ -39,11 +39,13 @@ export const HeaderBar = () => {
             .map(pathCheckArray => {
               if (route.pathname && route.pathname === pathCheckArray) {
                 return true
-              }
+              } else {
+                return false
+              } //TODO : refactor this part
             })
             .filter(x => x)
-          let highlightedPath = pathCheckArray.length > 0 ? true : false
 
+          let highlightedPath = pathCheckArray.length > 0 ? true : false
           return (
             <Text
               borderBottom={highlightedPath ? '3px solid' : {}}
@@ -86,6 +88,8 @@ export const HeaderBar = () => {
                   .map(pathCheckArray => {
                     if (route.pathname && route.pathname === pathCheckArray) {
                       return true
+                    } else {
+                      return false
                     }
                   })
                   .filter(x => x)
