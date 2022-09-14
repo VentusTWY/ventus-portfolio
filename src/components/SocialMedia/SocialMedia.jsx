@@ -1,71 +1,43 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Text, Box, Flex, Image, Spacer, IconButton } from '@chakra-ui/react'
-import { FaGithub, FaLinkedinIn, FaInstagram, FaFacebookF } from 'react-icons/fa'
-import { SiGmail } from 'react-icons/si'
+import HeadShake from 'react-reveal/HeadShake'
+import { SocialMediaComponents } from './SocialMediaComponents'
+import { Roll } from 'react-reveal'
+import { useState } from 'react'
 
 export const SocialMedia = () => {
-  const navigate = useNavigate()
+  const [onHover, setOnHover] = useState(false)
   return (
     <>
-      <Flex gap={5}>
-        <IconButton
-          icon={<FaGithub />}
-          style={{
-            color: '#181717',
-            fontSize: '50px',
-            cursor: 'pointer',
-          }}
-          onClick={() => {
-            window.open(`https://github.com/VentusTWY`)
-          }}
-        />
-
-        <FaLinkedinIn
-          // borderRadius={'50%'}
-          // border-color={'#red'}
-          // border-width={'10px'}
-          // bgColor={'#0077B5'}
-          style={{
-            color: '#0077B5',
-            fontSize: '50px',
-            cursor: 'pointer',
-          }}
-          onClick={() => {
-            window.open(`https://www.linkedin.com/in/ventus-twy/`)
-          }}
-        />
-        <SiGmail
-          style={{
-            color: '#D14836',
-            fontSize: '50px',
-            cursor: 'pointer',
-          }}
-          onClick={() => {
-            window.open(`mailto:ventustwy21@gmail.com`)
-          }}
-        />
-        <FaInstagram
-          style={{
-            color: '#E4405F',
-            fontSize: '50px',
-            cursor: 'pointer',
-          }}
-          onClick={() => {
-            window.open(`https://www.instagram.com/ventustan/`)
-          }}
-        />
-
-        <FaFacebookF
-          style={{
-            color: '#1877F2',
-            fontSize: '50px',
-            cursor: 'pointer',
-          }}
-          onClick={() => {
-            window.open(`https://www.facebook.com/K39Ventus`)
-          }}
-        />
+      <Flex
+        height={['33px', '50px']}
+        gap={[3, 5]}
+        textOverflow={'wordbreak'}
+        overflowWrap={'break-word'}
+      >
+        {SocialMediaComponents.map(components => {
+          return (
+            <>
+              <Flex
+                _hover={{
+                  color: 'red.500',
+                  fontSize: ['28px', '53px'],
+                }}
+                width={['30px', '55px']}
+                onMouseEnter={() => setOnHover(true)}
+                onMouseLeave={() => setOnHover(false)}
+                fontSize={['25px', '50px']}
+                color={components.color}
+                onClick={() => {
+                  window.open(components.link)
+                }}
+                cursor='pointer'
+              >
+                {components.icon}
+              </Flex>
+            </>
+          )
+        })}
       </Flex>
     </>
   )
