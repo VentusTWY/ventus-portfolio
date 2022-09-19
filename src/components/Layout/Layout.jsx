@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom'
 import { HeaderBar } from '../HeaderBar/HeaderBar'
 import { SocialMedia } from '../SocialMedia/SocialMedia'
 import ProfilePic from '../../assets/img/profilepic.JPG'
-import { Slide, Fade, Flip, LightSpeed, Zoom } from 'react-reveal'
+import { Slide, Fade, LightSpeed } from 'react-reveal'
 
 import React from 'react'
 
@@ -22,13 +22,19 @@ export const Layout = () => {
   const { isOpen, onToggle, onOpen } = useDisclosure()
   return (
     <>
-      <HeaderBar />
+      {/* <Flex height={'100vh'} flexDir={'column'}> */}
+      <HeaderBar position='relative' />
       <Flex
+        position='relative'
         flexDir={['column', 'column', 'column', 'row-reverse', 'row-reverse']}
         bgColor={'#EDF9FE'}
         p={10}
-        gap={3}
+        gap={['10', '20']}
         alignItems={'center'}
+        minH={'100vh'}
+        // justifyContent={'full'}
+        // height={'100vh'}
+        // width={'100vw'}
         //TODO : fix vh and spacer
       >
         <Fade mirror delay={['0', '1000']}>
@@ -43,7 +49,7 @@ export const Layout = () => {
             <Image src={ProfilePic} borderRadius={20} objectFit='cover' alt='display-picture' />
           </AspectRatio>
         </Fade>
-        <Spacer />
+        {/* <Spacer /> */}
 
         <Flex
           flexDir={'column'}
@@ -63,8 +69,8 @@ export const Layout = () => {
               // borderWidth={'3px'}
               borderRadius={'8px'}
             >
-              Hi, I am Ventus from Malaysia, currently in my penultimate year studying Aeronautical
-              Engineering in Imperial College London.
+              Hi! I am a penultimate year studying Aeronautical Engineering in Imperial College
+              London. I like to build cool stuffs and play music! :D
             </Text>
           </Slide>
           <LightSpeed left duration={1500} delay={500}>
@@ -72,6 +78,7 @@ export const Layout = () => {
           </LightSpeed>
         </Flex>
       </Flex>
+      {/* </Flex> */}
     </>
   )
 }
