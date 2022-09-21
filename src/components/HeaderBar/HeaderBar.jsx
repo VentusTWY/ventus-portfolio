@@ -37,14 +37,11 @@ export const HeaderBar = () => {
           navigate('/')
         }}
         cursor='pointer'
-        fontWeight={500}
         fontSize={'20px'}
       >
         𝓿𝓮𝓷𝓽𝓾𝓼 🍃
       </Text>
-      {/* <AspectRatio width={['200px', '250px', '400px']} maxH={'620px'} ratio={16 / 9}>
-        <Image src={LogoVentus} objectFit='cover' borderRadius={20} alt='logo' />{' '}
-      </AspectRatio> */}
+
       <Spacer />
       <Flex gap={10} display={['none', 'none', 'inherit', 'inherit']}>
         {headerTitles.map(items => {
@@ -62,7 +59,7 @@ export const HeaderBar = () => {
           return (
             <Text
               borderBottom={highlightedPath ? '3px solid' : {}}
-              fontWeight={highlightedPath ? 700 : 450}
+              fontWeight={highlightedPath ? 780 : 500}
               cursor='pointer'
               fontSize={'20px'}
               onClick={() => {

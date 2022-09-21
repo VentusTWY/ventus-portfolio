@@ -22,20 +22,15 @@ export const Layout = () => {
   const { isOpen, onToggle, onOpen } = useDisclosure()
   return (
     <>
-      {/* <Flex height={'100vh'} flexDir={'column'}> */}
       <HeaderBar position='relative' />
       <Flex
-        position='relative'
         flexDir={['column', 'column', 'column', 'row-reverse', 'row-reverse']}
         bgColor={'#EDF9FE'}
         p={10}
         gap={['10', '20']}
         alignItems={'center'}
-        minH={'100vh'}
-        // justifyContent={'full'}
-        // height={'100vh'}
-        // width={'100vw'}
-        //TODO : fix vh and spacer
+        minH={['100vh', '110vh', '110vh', '120vh', '105vh']}
+        mt={['0', '0', '0', '-18', '-10']}
       >
         <Fade mirror delay={['0', '1000']}>
           <AspectRatio
@@ -58,19 +53,17 @@ export const Layout = () => {
           width={['100%', '100%', '100%', '60%']}
         >
           <Slide left duration={800} cascade>
-            <Text fontSize={['30px', '80px']} fontWeight={750}>
+            <Text fontSize={['28px', '30px', '55px', '80px']} fontWeight={750}>
               Wei Yang (Ventus)
             </Text>
             <Text
-              fontSize={['20px', '35px']}
+              fontSize={['20px', '25px', '35px']}
               fontWeight={650}
               color={'#7F8DAA'}
-              // borderColor={'white'}
-              // borderWidth={'3px'}
               borderRadius={'8px'}
             >
               Hi! I am a penultimate year studying Aeronautical Engineering in Imperial College
-              London. I like to build cool stuffs and play music! :D
+              London. I like to build cool stuffs and play music! 😀👨‍💻🎵
             </Text>
           </Slide>
           <LightSpeed left duration={1500} delay={500}>
@@ -78,7 +71,6 @@ export const Layout = () => {
           </LightSpeed>
         </Flex>
       </Flex>
-      {/* </Flex> */}
     </>
   )
 }
