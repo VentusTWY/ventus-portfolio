@@ -9,20 +9,21 @@ export const WIPCard = () => {
       bgColor={'#EDF9FE'}
       alignItems={'center'}
       justifyContent={'center'}
-      height={'90vh'}
-      width={'100vw'}
+      height={'100vh'}
+      // width={'100vw'}
       p={5}
     >
       <Fade top>
         <Text
           color={'7F8DAA'}
-          fontSize={['20px', '30px', '50px']}
+          fontSize={['20px', '25px', '30px', '40px', '50px']}
           fontWeight={500}
           justifyContent={'center'}
           alignItems={'center'}
           textAlign={'center'}
+          // width={'90vw'}
         >
-          🛠️ Site under development.🛠️
+          🛠️ Site under development 🛠️
           <br /> Something interesting is coming soon 😃
         </Text>
       </Fade>
