@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom'
 import { HeaderBar } from '../HeaderBar/HeaderBar'
 import { SocialMedia } from '../SocialMedia/SocialMedia'
 import ProfilePic from '../../assets/img/profilepic.JPG'
-import { Slide, Fade, Flip, LightSpeed, Zoom } from 'react-reveal'
+import { Slide, Fade, LightSpeed } from 'react-reveal'
 
 import React from 'react'
 
@@ -22,14 +22,15 @@ export const Layout = () => {
   const { isOpen, onToggle, onOpen } = useDisclosure()
   return (
     <>
-      <HeaderBar />
+      <HeaderBar position='relative' />
       <Flex
         flexDir={['column', 'column', 'column', 'row-reverse', 'row-reverse']}
         bgColor={'#EDF9FE'}
         p={10}
-        gap={3}
+        gap={['10', '20']}
         alignItems={'center'}
-        //TODO : fix vh and spacer
+        minH={['100vh', '110vh', '110vh', '120vh', '105vh']}
+        mt={['0', '0', '0', '-18', '-10']}
       >
         <Fade mirror delay={['0', '1000']}>
           <AspectRatio
@@ -43,7 +44,7 @@ export const Layout = () => {
             <Image src={ProfilePic} borderRadius={20} objectFit='cover' alt='display-picture' />
           </AspectRatio>
         </Fade>
-        <Spacer />
+        {/* <Spacer /> */}
 
         <Flex
           flexDir={'column'}
@@ -52,19 +53,17 @@ export const Layout = () => {
           width={['100%', '100%', '100%', '60%']}
         >
           <Slide left duration={800} cascade>
-            <Text fontSize={['30px', '80px']} fontWeight={750}>
+            <Text fontSize={['28px', '30px', '55px', '80px']} fontWeight={750}>
               Wei Yang (Ventus)
             </Text>
             <Text
-              fontSize={['20px', '35px']}
+              fontSize={['20px', '25px', '35px']}
               fontWeight={650}
               color={'#7F8DAA'}
-              // borderColor={'white'}
-              // borderWidth={'3px'}
               borderRadius={'8px'}
             >
-              Hi, I am Ventus from Malaysia, currently in my penultimate year studying Aeronautical
-              Engineering in Imperial College London.
+              Hi! I am a penultimate year studying Aeronautical Engineering in Imperial College
+              London. I like to build cool stuffs and play music! 😀👨‍💻🎵
             </Text>
           </Slide>
           <LightSpeed left duration={1500} delay={500}>

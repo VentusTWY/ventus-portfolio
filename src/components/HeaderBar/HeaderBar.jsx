@@ -12,9 +12,12 @@ import {
   DrawerHeader,
   DrawerContent,
   DrawerOverlay,
+  Image,
+  AspectRatio,
 } from '@chakra-ui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { headerTitles } from './HeaderTitles'
+import LogoVentus from '../../assets/img/logo3.png'
 
 export const HeaderBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -29,9 +32,16 @@ export const HeaderBar = () => {
       alignItems={'center'}
       fontWeight={550}
     >
-      <Text fontWeight={500} fontSize={'20px'}>
-        Ventus
+      <Text
+        onClick={() => {
+          navigate('/')
+        }}
+        cursor='pointer'
+        fontSize={'20px'}
+      >
+        𝓿𝓮𝓷𝓽𝓾𝓼 🍃
       </Text>
+
       <Spacer />
       <Flex gap={10} display={['none', 'none', 'inherit', 'inherit']}>
         {headerTitles.map(items => {
@@ -49,7 +59,7 @@ export const HeaderBar = () => {
           return (
             <Text
               borderBottom={highlightedPath ? '3px solid' : {}}
-              fontWeight={highlightedPath ? 700 : 450}
+              fontWeight={highlightedPath ? 780 : 500}
               cursor='pointer'
               fontSize={'20px'}
               onClick={() => {
