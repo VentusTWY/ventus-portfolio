@@ -2,7 +2,7 @@ import { Text, Box, Flex, Input, Button } from '@chakra-ui/react'
 import React from 'react'
 import { HeaderBar } from '../HeaderBar/HeaderBar'
 import { WIPCard } from '../WIPCard'
-
+import { NewForm } from './NewForm'
 import { ContactMeForm } from './ContactMeForm'
 
 export const ContactMe = () => {
@@ -21,7 +21,7 @@ export const ContactMe = () => {
         <Text color={'black'}>
           Feel free to reach out if you have any questions or just want a chat!
         </Text>
-        <ContactMeForm />
+        <NewForm />
       </Flex>
       {/* <WIPCard /> */}
     </>
