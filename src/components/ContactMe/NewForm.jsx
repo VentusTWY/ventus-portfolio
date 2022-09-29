@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm, ValidationError } from '@formspree/react'
-import { FormControl, FormLabel, FormErrorMessage, FormHelperText } from '@chakra-ui/react'
+import { FormControl, FormLabel, FormErrorMessage, FormHelperText, flexbox } from '@chakra-ui/react'
 import { Text, Box, Flex, Input, Button } from '@chakra-ui/react'
 // {
 /* <html>
@@ -30,8 +30,9 @@ export const NewForm = () => {
 
   return (
     <Flex borderColor={'#001C55'} borderWidth={'thick'} width={'80%'} p={20} borderRadius={8}>
-      <form class='form-inline' onSubmit={handleSubmit}>
-        <label style={{ color: 'red' }} mt={'-10px'} htmlFor='email'>
+      <form onSubmit={handleSubmit} style={{ display: flexbox, flexDirection: 'column-reverse' }}>
+        {/* style='display: flex; flex-direction: column;' */}
+        <label style={{ color: 'red', mx: '20px' }} mt={'-10px'} htmlFor='email'>
           Email Address
         </label>
         <input
@@ -40,9 +41,10 @@ export const NewForm = () => {
           id='email'
           type='email'
           name='email'
+          mx='20px'
         />
         <ValidationError prefix='Email' field='email' errors={state.errors} />
-        <label mx={'-10px'} htmlFor='message'>
+        <label style={{ mx: '-10px' }} htmlFor='message'>
           Message{' '}
         </label>
         <input id='message' name='message' type='message' />
