@@ -18,7 +18,7 @@ import { Slide, Fade, LightSpeed } from 'react-reveal'
 
 import React from 'react'
 
-export const Layout = (data, isLoading) => {
+export const Layout = ({ isLoading }) => {
   const navigate = useNavigate()
   const { isOpen, onToggle, onOpen } = useDisclosure()
   return (
@@ -33,7 +33,7 @@ export const Layout = (data, isLoading) => {
         minH={['100vh', '110vh', '110vh', '120vh', '105vh']}
         mt={['0', '0', '0', '-18', '-10']}
       >
-        <Skeleton isLoaded={isLoading}>
+        <Skeleton isLoaded={!isLoading}>
           <Fade mirror delay={['0', '1000']}>
             <AspectRatio
               justifyContent={'center'}
