@@ -22,8 +22,8 @@ export const ContactMe = () => {
         <Text color={'black'}>
           Feel free to reach out if you have any questions or just want a chat!
         </Text>
-        <TestForm />
-        {/* <NewForm /> */}
+        {/* <TestForm /> */}
+        <NewForm />
         {/* <ContactMeForm /> */}
       </Flex>
       {/* <WIPCard /> */}

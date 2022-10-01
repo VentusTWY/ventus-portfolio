@@ -2,25 +2,7 @@ import React from 'react'
 import { useForm, ValidationError } from '@formspree/react'
 import { FormControl, FormLabel, FormErrorMessage, FormHelperText, flexbox } from '@chakra-ui/react'
 import { Text, Box, Flex, Input, Button } from '@chakra-ui/react'
-// {
-/* <html>
-<head>
-<style>
-.flex-container {
-display: flex;
-background-color: DodgerBlue;
-}
-
-.flex-container > div {
-background-color: #f1f1f1;
-margin: 10px;
-padding: 20px;
-font-size: 30px;
-}
-</style>
-</head>
-</html> */
-// }
+import './Form.css'
 
 export const NewForm = () => {
   const [state, handleSubmit] = useForm('mnqrpkla')
@@ -29,12 +11,23 @@ export const NewForm = () => {
   }
 
   return (
-    <Flex borderColor={'#001C55'} borderWidth={'thick'} width={'80%'} p={20} borderRadius={8}>
-      <form onSubmit={handleSubmit} style={{ display: flexbox, flexDirection: 'column-reverse' }}>
+    <Flex borderColor={'#001C55'} borderWidth={'thick'} width={'80%'} p={10} borderRadius={8}>
+      <form className='box' onSubmit={handleSubmit}>
         {/* style='display: flex; flex-direction: column;' */}
-        <label style={{ color: 'red', mx: '20px' }} mt={'-10px'} htmlFor='email'>
+        {/* <div className='formitems'> */}
+        <label style={{ mx: '-10px' }} htmlFor='name'>
+          Name
+        </label>
+        {/* <div classname='input'> */}
+        <input id='name' name='name' type='name' />
+        <ValidationError prefix='name' field='name' errors={state.errors} />
+        {/* </div> */}
+        {/* </div> */}
+        {/* <div className='formitems'> */}
+        <label mt={'-10px'} htmlFor='email'>
           Email Address
         </label>
+        {/* <div classname='input'> */}
         <input
           borderColor={'#001C55'}
           borderWidth={'medium'}
@@ -43,14 +36,20 @@ export const NewForm = () => {
           name='email'
           mx='20px'
         />
+        {/* </div> */}
         <ValidationError prefix='Email' field='email' errors={state.errors} />
+        {/* </div> */}
+        {/* <div className='formitems'> */}
         <label style={{ mx: '-10px' }} htmlFor='message'>
-          Message{' '}
+          Message
         </label>
         <input id='message' name='message' type='message' />
         <ValidationError prefix='Message' field='message' errors={state.errors} />
+        {/* </div> */}
 
-        <button>Submit</button>
+        <div className='formbutton'>
+          <button>Submit</button>
+        </div>
       </form>
     </Flex>
   )
