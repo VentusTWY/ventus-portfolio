@@ -13,26 +13,19 @@ export const NewForm = () => {
   return (
     <Flex borderColor={'#001C55'} borderWidth={'thick'} width={'80%'} p={10} borderRadius={8}>
       <form className='box' onSubmit={handleSubmit}>
-        {/* style='display: flex; flex-direction: column;' */}
-        {/* <div className='formitems'> */}
-        <label style={{ mx: '-10px' }} htmlFor='name'>
+        <label class='labels' htmlFor='name'>
           Name
         </label>
-        {/* <div classname='input'> */}
-        <input id='name' name='name' type='name' />
+        <input id='name' name='name' type='shorttext' />
         <ValidationError prefix='name' field='name' errors={state.errors} />
-        {/* </div> */}
-        {/* </div> */}
-        {/* <div className='formitems'> */}
-        <label mt={'-10px'} htmlFor='email'>
+        <label class='labels' htmlFor='email'>
           Email Address
         </label>
-        {/* <div classname='input'> */}
         <input
           borderColor={'#001C55'}
           borderWidth={'medium'}
           id='email'
-          type='email'
+          type='shorttext'
           name='email'
           mx='20px'
         />
@@ -40,16 +33,16 @@ export const NewForm = () => {
         <ValidationError prefix='Email' field='email' errors={state.errors} />
         {/* </div> */}
         {/* <div className='formitems'> */}
-        <label style={{ mx: '-10px' }} htmlFor='message'>
+        <label class='labels' htmlFor='message'>
           Message
         </label>
-        <input id='message' name='message' type='message' />
+        <textarea id='message' name='message' type='message' />
         <ValidationError prefix='Message' field='message' errors={state.errors} />
         {/* </div> */}
 
-        <div className='formbutton'>
-          <button>Submit</button>
-        </div>
+        {/* <div className='formbutton'> */}
+        <button class='button'>Submit</button>
+        {/* </div> */}
       </form>
     </Flex>
   )
