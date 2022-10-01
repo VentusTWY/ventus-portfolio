@@ -27,7 +27,7 @@ export const HeaderBar = () => {
     <Flex
       bgColor={'#EDF9FE'}
       height={'60px'}
-      p={'5'}
+      p={5}
       color={'#001C55'}
       alignItems={'center'}
       fontWeight={550}

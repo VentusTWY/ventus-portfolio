@@ -40,14 +40,14 @@ input[type=shorttext]{
     padding: 12px 20px;
     margin: 0.5px 8px 5px 8px;
     border-radius:8px;
-    height:35px;
+    height:8%;
 }
 
 textarea[type=message]{
-    padding: 5px 20px;
+    padding: 12px 20px;
     margin: 0.5px 8px 5px 8px;
     border-radius: 8px;
-    height:150px;
+    height:66%;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
@@ -64,5 +64,5 @@ textarea[type=message]{
     text-align: center;
     padding: 5px 20px 5px 20px;
     height:40px;
-
 }
+/* TODO: media query for css padding */

@@ -11,7 +11,14 @@ export const NewForm = () => {
   }
 
   return (
-    <Flex borderColor={'#001C55'} borderWidth={'thick'} width={'80%'} p={10} borderRadius={8}>
+    <Flex
+      borderColor={'#001C55'}
+      borderWidth={'thick'}
+      width={'80%'}
+      p={[5, 10]}
+      borderRadius={8}
+      height={'70%'}
+    >
       <form className='box' onSubmit={handleSubmit}>
         <label class='labels' htmlFor='name'>
           Name

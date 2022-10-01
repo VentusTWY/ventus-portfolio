@@ -14,12 +14,22 @@ export const ContactMe = () => {
         bgColor={'#EDF9FE'}
         alignItems={'center'}
         justifyContent={'center'}
-        height={'100vh'}
-        p={5}
+        height={('150vh', '100vh')}
+        px={5}
         flexDir={'column'}
         gap={10}
       >
-        <Text color={'black'}>
+        <Text
+          mt={'-5%'}
+          width={'90%'}
+          fontSize={['20px', '25px', '25px', '25px']}
+          fontWeight={550}
+          px={10}
+          color={'black'}
+          justifyContent={'center'}
+          alignItems={'center'}
+          textAlign={'center'}
+        >
           Feel free to reach out if you have any questions or just want a chat!
         </Text>
         {/* <TestForm /> */}
