@@ -9,6 +9,7 @@ import { TextCard } from './TextCard'
 // const FormContext = createContext({ submittedForm, setSubmittedForm })
 // const {(items, setItems)} = useContext(Context)
 
+// TODO : 1. edit alert message 2. edit contextnames 3. change fontsize on iPad
 export const ContactMe = () => {
   return (
     <>
@@ -24,12 +25,9 @@ export const ContactMe = () => {
           gap={10}
         >
           <TextCard />
-          {/* <TestForm /> */}
           <NewForm />
-          {/* <ContactMeForm /> */}
         </Flex>
       </ContextProvider>
-      {/* <WIPCard /> */}
     </>
   )
 }
