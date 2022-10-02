@@ -1,13 +1,48 @@
-import React from 'react'
-import { useForm, ValidationError } from '@formspree/react'
-import { FormControl, FormLabel, FormErrorMessage, FormHelperText, flexbox } from '@chakra-ui/react'
-import { Text, Box, Flex, Input, Button } from '@chakra-ui/react'
 import './Form.css'
+import React from 'react'
+import {
+  Text,
+  Box,
+  Flex,
+  Input,
+  Button,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from '@chakra-ui/react'
+import { useForm, ValidationError } from '@formspree/react'
+import { useContext } from 'react'
+import { Context } from './Context'
 
 export const NewForm = () => {
   const [state, handleSubmit] = useForm('mnqrpkla')
+
+  const { items, setItems } = useContext(Context)
+
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>
+    setItems(false)
+    return (
+      <Alert
+        status='success'
+        variant='subtle'
+        flexDirection='column'
+        alignItems='center'
+        justifyContent='center'
+        textAlign='center'
+        height='35%'
+        width={['100%', '80%', '80%', '80%']}
+        borderRadius={8}
+      >
+        <AlertIcon boxSize='40px' mr={0} />
+        <AlertTitle mt={4} mb={1} fontSize='lg'>
+          Application submitted!
+        </AlertTitle>
+        <AlertDescription maxWidth='sm'>
+          Thanks for submitting your application. Our team will get back to you soon.
+        </AlertDescription>
+      </Alert>
+    )
   }
 
   return (
@@ -23,8 +58,9 @@ export const NewForm = () => {
         <label class='labels' htmlFor='name'>
           Name
         </label>
-        <input id='name' name='name' type='shorttext' />
-        <ValidationError prefix='name' field='name' errors={state.errors} />
+        <input id='name' name='name' type='name' required />
+        {/* <ValidationError prefix='name' field='name' errors={state.errors} /> */}
+
         <label class='labels' htmlFor='email'>
           Email Address
         </label>
@@ -32,24 +68,20 @@ export const NewForm = () => {
           borderColor={'#001C55'}
           borderWidth={'medium'}
           id='email'
-          type='shorttext'
+          type='email'
           name='email'
           mx='20px'
+          required
         />
-        {/* </div> */}
         <ValidationError prefix='Email' field='email' errors={state.errors} />
-        {/* </div> */}
-        {/* <div className='formitems'> */}
+
         <label class='labels' htmlFor='message'>
           Message
         </label>
-        <textarea id='message' name='message' type='message' />
+        <textarea id='message' name='message' type='message' required />
         <ValidationError prefix='Message' field='message' errors={state.errors} />
-        {/* </div> */}
 
-        {/* <div className='formbutton'> */}
         <button class='button'>Submit</button>
-        {/* </div> */}
       </form>
     </Flex>
   )
