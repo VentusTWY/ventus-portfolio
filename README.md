@@ -1,5 +1,5 @@
 # Link To Portfolio
-[Click Here]](https://ventus-portfolio.netlify.app)
+[Click Here](https://ventus-portfolio.netlify.app)
 
 
 # Website Build Status on Netlify
