@@ -3,10 +3,10 @@ import { useContext } from 'react'
 import { Context } from './Context'
 
 export const TextCard = () => {
-  const { items, setItems } = useContext(Context)
+  const { formSubmitted, setFormSubmitted } = useContext(Context)
   return (
     <>
-      {items && (
+      {!formSubmitted && (
         <Text
           mt={'-5%'}
           width={'90%'}

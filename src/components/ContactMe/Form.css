@@ -36,6 +36,13 @@
     font-weight: 620;
     margin: 0px 8px;
 }
+
+@media only screen and (min-width: 700px) and (max-width:900px){
+    .labels{
+        font-size: 22px;
+    }
+}
+
 input[type=name],input[type=email]{
     padding: 12px 20px;
     margin: 0.5px 8px 5px 8px;

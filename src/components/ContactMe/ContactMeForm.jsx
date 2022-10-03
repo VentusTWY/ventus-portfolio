@@ -1,3 +1,5 @@
+// Chakra UI form - not compatible with formspree hence not used for now
+
 import { useForm, ValidationError } from '@formspree/react'
 import { Text, Box, Flex, Input, Button } from '@chakra-ui/react'
 import { FormControl, FormLabel, FormErrorMessage, FormHelperText } from '@chakra-ui/react'

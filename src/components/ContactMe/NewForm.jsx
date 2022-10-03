@@ -14,15 +14,18 @@ import {
 import { useForm, ValidationError } from '@formspree/react'
 import { useContext } from 'react'
 import { Context } from './Context'
+import { Fade } from 'react-reveal'
 
 export const NewForm = () => {
   const [state, handleSubmit] = useForm('mnqrpkla')
 
-  const { items, setItems } = useContext(Context)
+  const { formSubmitted, setFormSubmitted } = useContext(Context)
 
+  // TODO : add effects
   if (state.succeeded) {
-    setItems(false)
+    setFormSubmitted(true)
     return (
+      // <Fade top>
       <Alert
         status='success'
         variant='subtle'
@@ -35,13 +38,19 @@ export const NewForm = () => {
         borderRadius={8}
       >
         <AlertIcon boxSize='40px' mr={0} />
-        <AlertTitle mt={4} mb={1} fontSize='lg'>
-          Application submitted!
+        <AlertTitle mt={4} mb={1} fontSize={['15px', '20px']}>
+          Your message has been sent!
         </AlertTitle>
-        <AlertDescription maxWidth='sm'>
-          Thanks for submitting your application. Our team will get back to you soon.
+        <AlertDescription
+          justifyContent={'center'}
+          my={1}
+          fontSize={['12px', '18px']}
+          maxWidth={['55%', '55%', '100%']}
+        >
+          Thank you for your message. Ventus will get back to you soon! 🙏💛
         </AlertDescription>
       </Alert>
+      // </Fade>
     )
   }
 
@@ -59,7 +68,7 @@ export const NewForm = () => {
           Name
         </label>
         <input id='name' name='name' type='name' required />
-        {/* <ValidationError prefix='name' field='name' errors={state.errors} /> */}
+        <ValidationError prefix='name' field='name' errors={state.errors} />
 
         <label class='labels' htmlFor='email'>
           Email Address
