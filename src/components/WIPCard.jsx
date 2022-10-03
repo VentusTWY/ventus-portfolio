@@ -10,7 +10,6 @@ export const WIPCard = () => {
       alignItems={'center'}
       justifyContent={'center'}
       height={'100vh'}
-      // width={'100vw'}
       p={5}
     >
       <Fade top>

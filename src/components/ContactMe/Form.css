@@ -1,0 +1,75 @@
+
+.form-box{
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    height: 90vh;
+    margin: 0vw;
+    padding: 5vw;
+    background-color: beige;
+    position:relative; 
+
+}
+
+.box{
+    /* border-color: black; */
+    /* border-width: 2px; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    gap: 20px;
+    justify-content: auto;
+    text-justify: distribute;
+    /* align-items: center; */
+}
+
+
+.formitems{
+    display:flex;
+    gap:25px; 
+}
+
+.labels{
+    font-weight: 620;
+    margin: 0px 8px;
+}
+
+@media only screen and (min-width: 700px) and (max-width:900px){
+    .labels{
+        font-size: 22px;
+    }
+}
+
+input[type=name],input[type=email]{
+    padding: 12px 20px;
+    margin: 0.5px 8px 5px 8px;
+    border-radius:8px;
+    height:8%;
+}
+
+textarea[type=message]{
+    padding: 12px 20px;
+    margin: 0.5px 8px 5px 8px;
+    border-radius: 8px;
+    height:66%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.button{
+    margin: 0px 8px;
+    font-weight: 500;
+    background-color:#001C55;
+    color: white;
+    border-radius: 5px;
+    border-color: black;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 20px 5px 20px;
+    height:40px;
+}
+/* TODO: media query for css padding */

@@ -8,6 +8,7 @@ import {
   AspectRatio,
   ScaleFade,
   useDisclosure,
+  Skeleton,
 } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 import { HeaderBar } from '../HeaderBar/HeaderBar'
@@ -17,7 +18,7 @@ import { Slide, Fade, LightSpeed } from 'react-reveal'
 
 import React from 'react'
 
-export const Layout = () => {
+export const Layout = ({ isLoading }) => {
   const navigate = useNavigate()
   const { isOpen, onToggle, onOpen } = useDisclosure()
   return (
@@ -32,18 +33,20 @@ export const Layout = () => {
         minH={['100vh', '110vh', '110vh', '120vh', '105vh']}
         mt={['0', '0', '0', '-18', '-10']}
       >
-        <Fade mirror delay={['0', '1000']}>
-          <AspectRatio
-            justifyContent={'center'}
-            alignSelf={'center'}
-            width={['200px', '250px', '400px']}
-            maxH={'620px'}
-            mr={['0px', '0px', '0px', '0px', '75px']}
-            ratio={9 / 16}
-          >
-            <Image src={ProfilePic} borderRadius={20} objectFit='cover' alt='display-picture' />
-          </AspectRatio>
-        </Fade>
+        <Skeleton isLoaded={!isLoading}>
+          <Fade mirror delay={['0', '1000']}>
+            <AspectRatio
+              justifyContent={'center'}
+              alignSelf={'center'}
+              width={['200px', '250px', '400px']}
+              maxH={'620px'}
+              mr={['0px', '0px', '0px', '0px', '75px']}
+              ratio={9 / 16}
+            >
+              <Image src={ProfilePic} borderRadius={20} objectFit='cover' alt='display-picture' />
+            </AspectRatio>
+          </Fade>
+        </Skeleton>
         {/* <Spacer /> */}
 
         <Flex
