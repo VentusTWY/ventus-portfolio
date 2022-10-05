@@ -74,6 +74,11 @@ export const Layout = ({ isLoading }) => {
           </LightSpeed>
         </Flex>
       </Flex>
+      <Flex p={8} bgColor={'#EDF9FE'}>
+        <Text as='i' fontSize={['15px', '20px', '22px', '25px']} fontWeight={550}>
+          This website was built using React!
+        </Text>
+      </Flex>
     </>
   )
 }
