@@ -4,12 +4,14 @@ import { HeaderBar } from '../HeaderBar/HeaderBar'
 import { NewForm } from './NewForm'
 import { ContextProvider } from './Context'
 import { TextCard } from './TextCard'
+import { Slide, Fade, LightSpeed } from 'react-reveal'
 
 export const ContactMe = () => {
   return (
     <>
       <HeaderBar />
       <ContextProvider>
+        {/* <LightSpeed> */}
         <Flex
           bgColor={'#EDF9FE'}
           alignItems={'center'}
@@ -22,6 +24,7 @@ export const ContactMe = () => {
           <TextCard />
           <NewForm />
         </Flex>
+        {/* </LightSpeed> */}
       </ContextProvider>
     </>
   )
