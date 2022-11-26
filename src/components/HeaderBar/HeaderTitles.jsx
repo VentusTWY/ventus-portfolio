@@ -1,6 +1,6 @@
 import { FaHome } from 'react-icons/fa'
 import { TbSeeding } from 'react-icons/tb'
-import { GrPersonalComputer } from 'react-icons/gr'
+import { GrPersonalComputer, GrDocument } from 'react-icons/gr'
 import { MdContactSupport } from 'react-icons/md'
 
 export const headerTitles = [
@@ -19,8 +19,17 @@ export const headerTitles = [
     path: '/tech',
     highlightPath: ['/tech'],
   },
+
   {
     id: 3,
+    label: 'My CV',
+    icon: <GrDocument />,
+    path: '/resume',
+    highlightPath: ['/resume'],
+  },
+
+  {
+    id: 4,
     label: 'Contact Me',
     icon: <MdContactSupport />,
     path: '/contactme',

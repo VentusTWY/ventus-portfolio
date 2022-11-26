@@ -17,7 +17,6 @@ import {
 } from '@chakra-ui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { headerTitles } from './HeaderTitles'
-import LogoVentus from '../../assets/img/logo3.png'
 
 export const HeaderBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
