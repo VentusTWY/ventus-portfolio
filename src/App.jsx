@@ -5,7 +5,7 @@ import { Home } from './components/Home/Home'
 import { More } from './components/More/More'
 import { TechnologyExperience } from './components/TechnologyExperience/TechnologyExperience'
 import { ContactMe } from './components/ContactMe/ContactMe'
-import { Resume } from './components/MyCV/MyCV'
+// import { Resume } from './components/MyCV/MyCV'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path='/more' element={<More />}></Route>
         <Route path='/tech' element={<TechnologyExperience />}></Route>
         <Route path='/contactme' element={<ContactMe />}></Route>
-        <Route path='/resume' element={<Resume />}></Route>
+        <Route path='/resume' element={<Home />}></Route>
       </Routes>
     </ChakraProvider>
   )
