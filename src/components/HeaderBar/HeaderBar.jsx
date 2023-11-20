@@ -1,12 +1,10 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 import { React, useState } from 'react'
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5'
-import WeiYangTan_CV from '../../assets/WeiYangTan_CV.pdf'
+// import WeiYangTan_CV from '../../assets/WeiYangTan_CV.pdf'
 import {
   Flex,
   Text,
   Spacer,
-  Box,
   IconButton,
   Drawer,
   DrawerBody,
@@ -14,11 +12,11 @@ import {
   DrawerHeader,
   DrawerContent,
   DrawerOverlay,
-  Image,
-  AspectRatio,
 } from '@chakra-ui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { headerTitles } from './HeaderTitles'
+
+const WeiYangTan_CV = process.env.PUBLIC_URL + '/WeiYangTan_CV.pdf'
 
 export const HeaderBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
