@@ -1,9 +1,7 @@
 import {
   Text,
-  Box,
   Flex,
   Image,
-  Spacer,
   Center,
   AspectRatio,
   ScaleFade,

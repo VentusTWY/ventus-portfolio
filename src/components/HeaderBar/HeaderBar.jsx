@@ -1,5 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 import { React, useState } from 'react'
+import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5'
+import WeiYangTan_CV from '../../assets/WeiYangTan_CV.pdf'
 import {
   Flex,
   Text,
@@ -17,7 +19,6 @@ import {
 } from '@chakra-ui/react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { headerTitles } from './HeaderTitles'
-import LogoVentus from '../../assets/img/logo3.png'
 
 export const HeaderBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -63,7 +64,11 @@ export const HeaderBar = () => {
               cursor='pointer'
               fontSize={'20px'}
               onClick={() => {
-                navigate(items.path)
+                if (items.path === '/resume') {
+                  window.open(WeiYangTan_CV)
+                } else {
+                  navigate(items.path)
+                }
               }}
             >
               {items.label}
@@ -121,7 +126,11 @@ export const HeaderBar = () => {
                       bgGradient: 'linear(to-tl, blue.200, #2B528D)',
                     }}
                     onClick={() => {
-                      navigate(items.path)
+                      if (items.path === '/resume') {
+                        window.open(WeiYangTan_CV)
+                      } else {
+                        navigate(items.path)
+                      }
                     }}
                   >
                     {items.icon}
