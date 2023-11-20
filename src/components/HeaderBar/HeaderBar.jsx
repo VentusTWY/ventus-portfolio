@@ -64,7 +64,7 @@ export const HeaderBar = () => {
               cursor='pointer'
               fontSize={'20px'}
               onClick={() => {
-                if (items.path == '/resume') {
+                if (items.path === '/resume') {
                   window.open(WeiYangTan_CV)
                 } else {
                   navigate(items.path)
@@ -126,7 +126,7 @@ export const HeaderBar = () => {
                       bgGradient: 'linear(to-tl, blue.200, #2B528D)',
                     }}
                     onClick={() => {
-                      if (items.path == '/resume') {
+                      if (items.path === '/resume') {
                         window.open(WeiYangTan_CV)
                       } else {
                         navigate(items.path)
